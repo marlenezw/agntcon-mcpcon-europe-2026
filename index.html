@@ -105,6 +105,12 @@
   const dots=document.getElementById('dots');
   slides.forEach((_,k)=>{const d=document.createElement('i');d.onclick=()=>show(k);dots.appendChild(d);});
 
+  // Show a placeholder if a slide image ever fails to load
+  slides.forEach(s=>{
+    const img=s.querySelector('img');
+    if(img) img.onerror=function(){ this.src='slides_png/placeholder.png'; };
+  });
+
   function playIssues(){
     const sec=document.getElementById('issues');
     const cards=[...sec.querySelectorAll('.card')];
