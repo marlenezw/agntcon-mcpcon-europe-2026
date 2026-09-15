@@ -1,4 +1,4 @@
-![Title slide](./slide-01-title.png)
+![Title slide](./slides_png/slide-01-title.png)
 
 # A New Way To Build Software
 ### How GitHub Is Evolving For a Human, Agent Future
