@@ -136,6 +136,7 @@
     const r=e.currentTarget.getBoundingClientRect();
     go(e.clientX < r.left + r.width/2 ? -1 : 1);
   });
+  // Presenter note feature: reads ?note= from the URL and shows it in the footer bar
   // Show an optional presenter note passed in the URL, e.g. ?note=Hello
   const noteParam = new URLSearchParams(location.search).get('note');
   if(noteParam){
