@@ -20,6 +20,8 @@
   .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .25s ease}
   .slide.active{opacity:1;visibility:visible}
   .slide img{width:100%;height:100%;object-fit:contain;display:block;background:var(--bg)}
+  .slide-video{background:#05070c;display:flex;align-items:center;justify-content:center}
+  .slide-video video{width:100%;height:100%;object-fit:contain}
 
   /* animated issues slide */
   .heads{display:grid;grid-template-columns:1fr 1fr;padding:56px 70px 0;text-align:center}
@@ -86,6 +88,7 @@
     </section>
     <section class="slide"><img src="slides_png/slide-07-future.png" alt="The future is already here"></section>
     <section class="slide"><img src="slides_png/slide-08-experience.png" alt="The Modern GitHub Experience"></section>
+    <section class="slide slide-video"><video src="assets/gh-attach-demo.mp4" muted playsinline preload="auto"></video></section>
   </div>
 </div>
 
@@ -115,6 +118,7 @@
   function show(n){
     i=Math.max(0,Math.min(slides.length-1,n));
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    slides.forEach((s,k)=>{const v=s.querySelector('video');if(v){if(k===i){v.currentTime=0;v.play().catch(()=>{});}else{v.pause();}}});
     [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
     document.getElementById('count').textContent=(i+1)+' / '+slides.length;
     if(slides[i].id==='issues') playIssues();
