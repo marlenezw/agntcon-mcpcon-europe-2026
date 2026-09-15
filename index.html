@@ -87,6 +87,7 @@
     <section class="slide"><img src="slides_png/slide-07-future.png" alt="The future is already here"></section>
     <section class="slide"><img src="slides_png/slide-08-experience.png" alt="The Modern GitHub Experience"></section>
   </div>
+  <div id="note-bar"></div>
 </div>
 
 <div class="nav">
@@ -135,6 +136,13 @@
     const r=e.currentTarget.getBoundingClientRect();
     go(e.clientX < r.left + r.width/2 ? -1 : 1);
   });
+  // Show an optional presenter note passed in the URL, e.g. ?note=Hello
+  const noteParam = new URLSearchParams(location.search).get('note');
+  if(noteParam){
+    const bar = document.getElementById('note-bar');
+    bar.innerHTML = 'Presenter note: ' + noteParam;
+    bar.style.display = 'block';
+  }
   show(0);
 </script>
 </body>
