@@ -144,6 +144,35 @@
   .dslide.play .stat:nth-of-type(2){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .46s both}
   .dslide.play .d-foot{animation:tsUp .5s cubic-bezier(.22,.9,.32,1) .6s both}
 
+  /* scale-of-the-shift slide (three area charts) */
+  .scale-body{align-items:stretch;gap:26px}
+  .mini{flex:1;display:flex;flex-direction:column;justify-content:center;
+    background:#f6faf7;border:1px solid #d7e6dc;border-radius:16px;padding:20px 20px 16px;
+    align-self:center;height:332px;box-shadow:0 1px 2px rgba(31,35,40,.05)}
+  .mini-title{margin:0;font-size:13px;font-weight:700;letter-spacing:.9px;
+    text-transform:uppercase;color:var(--mute);line-height:1.3;min-height:34px}
+  .mini-val{margin:4px 0 0;font-size:42px;line-height:1.1;letter-spacing:-1.4px;
+    font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+  .mini-plot{display:flex;gap:9px;margin-top:14px}
+  .mini-y{display:flex;flex-direction:column;justify-content:space-between;
+    font-size:11px;color:#8b949e;height:150px;padding:1px 0}
+  .plot{flex:1;height:150px;position:relative;
+    background-image:repeating-linear-gradient(to top,#e4ebe6 0 1px,transparent 1px 25%)}
+  .spark{position:absolute;inset:0;width:100%;height:100%;display:block;
+    clip-path:inset(0 100% 0 0)}
+  .dslide.play .spark{animation:wipe 1.05s cubic-bezier(.3,.7,.35,1) both}
+  @keyframes wipe{0%{clip-path:inset(0 100% 0 0)}100%{clip-path:inset(0 0 0 0)}}
+  .mini-x{display:flex;justify-content:space-between;margin-top:9px;padding-left:38px;
+    font-size:12px;color:#8b949e}
+  .scale-slide .d-foot b{color:var(--ink);font-weight:700}
+  .dslide .mini{opacity:0}
+  .dslide.play .mini:nth-child(1){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .3s both}
+  .dslide.play .mini:nth-child(2){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .42s both}
+  .dslide.play .mini:nth-child(3){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .54s both}
+  .dslide.play .mini:nth-child(1) .spark{animation-delay:.55s}
+  .dslide.play .mini:nth-child(2) .spark{animation-delay:.67s}
+  .dslide.play .mini:nth-child(3) .spark{animation-delay:.79s}
+
   /* agentic surfaces slide */
   .surfaces{display:flex;flex-direction:column}
   .s-head{padding:64px 70px 0;text-align:center;opacity:0;flex:none}
@@ -240,14 +269,78 @@
         </div>
         <div class="stat">
           <p class="stat-label">Commits pushed in 2025</p>
-          <p class="stat-num">~1B</p>
+          <p class="stat-num">986M</p>
           <span class="chip"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.8 10.8 9.4H1.2z" fill="currentColor"/></svg>25% YoY</span>
-          <p class="stat-desc">GitHub&rsquo;s most active year ever.</p>
+          <p class="stat-desc">Nearly a billion commits, GitHub&rsquo;s most active year ever.</p>
         </div>
       </div>
       <p class="d-foot">Source: GitHub Octoverse 2025.</p>
     </section>
-    <section class="slide"><img src="slides_png/slide-03-commits.png" alt="Commits line chart"></section>
+    <section class="slide dslide scale-slide">
+      <div class="d-top"><span>platform / the scale of the shift</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
+      <p class="d-kicker">2023 to August 2026</p>
+      <h2 class="d-title">The Scale Of The Shift</h2>
+      <div class="d-body scale-body">
+        <div class="mini">
+          <p class="mini-title">Merged pull requests per month</p>
+          <p class="mini-val">130M</p>
+          <div class="mini-plot">
+            <div class="mini-y"><span>140M</span><span>0</span></div>
+            <div class="plot">
+              <svg class="spark" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="grad0" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2da44e" stop-opacity=".34"/>
+                  <stop offset="100%" stop-color="#2da44e" stop-opacity=".03"/>
+                </linearGradient></defs>
+                <path d="M 0.00 79.24 L 2.08 78.48 L 4.17 78.64 L 6.25 79.39 L 8.33 80.31 L 10.42 80.01 L 12.50 78.79 L 14.58 78.17 L 16.67 78.17 L 18.75 78.48 L 20.83 79.09 L 22.92 78.79 L 25.00 77.41 L 27.08 76.49 L 29.17 76.19 L 31.25 76.34 L 33.33 76.80 L 35.42 76.49 L 37.50 74.97 L 39.58 73.44 L 41.67 72.68 L 43.75 72.68 L 45.83 72.99 L 47.92 72.07 L 50.00 70.39 L 52.08 68.41 L 54.17 67.04 L 56.25 66.58 L 58.33 66.27 L 60.42 65.20 L 62.50 62.46 L 64.58 59.71 L 66.67 57.11 L 68.75 55.74 L 70.83 54.98 L 72.92 53.30 L 75.00 50.70 L 77.08 46.58 L 79.17 44.29 L 81.25 42.16 L 83.33 41.09 L 85.42 38.64 L 87.50 34.37 L 89.58 28.88 L 91.67 23.99 L 93.75 20.64 L 95.83 17.59 L 97.92 12.85 L 100.00 7.66 L 100 100 L 0 100 Z" fill="url(#grad0)"/>
+                <path d="M 0.00 79.24 L 2.08 78.48 L 4.17 78.64 L 6.25 79.39 L 8.33 80.31 L 10.42 80.01 L 12.50 78.79 L 14.58 78.17 L 16.67 78.17 L 18.75 78.48 L 20.83 79.09 L 22.92 78.79 L 25.00 77.41 L 27.08 76.49 L 29.17 76.19 L 31.25 76.34 L 33.33 76.80 L 35.42 76.49 L 37.50 74.97 L 39.58 73.44 L 41.67 72.68 L 43.75 72.68 L 45.83 72.99 L 47.92 72.07 L 50.00 70.39 L 52.08 68.41 L 54.17 67.04 L 56.25 66.58 L 58.33 66.27 L 60.42 65.20 L 62.50 62.46 L 64.58 59.71 L 66.67 57.11 L 68.75 55.74 L 70.83 54.98 L 72.92 53.30 L 75.00 50.70 L 77.08 46.58 L 79.17 44.29 L 81.25 42.16 L 83.33 41.09 L 85.42 38.64 L 87.50 34.37 L 89.58 28.88 L 91.67 23.99 L 93.75 20.64 L 95.83 17.59 L 97.92 12.85 L 100.00 7.66" fill="none" stroke="#1a7f37" stroke-width="2.4"
+                      stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="mini-x"><span>&rsquo;23</span><span>&rsquo;24</span><span>&rsquo;25</span><span>&rsquo;26</span><span>Aug</span></div>
+        </div>
+        <div class="mini">
+          <p class="mini-title">Commits per month</p>
+          <p class="mini-val">2.9B</p>
+          <div class="mini-plot">
+            <div class="mini-y"><span>3.5B</span><span>0</span></div>
+            <div class="plot">
+              <svg class="spark" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2da44e" stop-opacity=".34"/>
+                  <stop offset="100%" stop-color="#2da44e" stop-opacity=".03"/>
+                </linearGradient></defs>
+                <path d="M 0.00 87.43 L 2.08 87.43 L 4.17 87.43 L 6.25 87.71 L 8.33 88.29 L 10.42 88.00 L 12.50 87.43 L 14.58 86.86 L 16.67 86.86 L 18.75 87.14 L 20.83 87.43 L 22.92 87.14 L 25.00 86.29 L 27.08 85.43 L 29.17 85.43 L 31.25 85.43 L 33.33 85.43 L 35.42 85.14 L 37.50 84.57 L 39.58 83.43 L 41.67 82.86 L 43.75 82.57 L 45.83 82.57 L 47.92 81.71 L 50.00 80.57 L 52.08 79.14 L 54.17 78.00 L 56.25 77.71 L 58.33 77.14 L 60.42 76.00 L 62.50 74.00 L 64.58 72.00 L 66.67 70.29 L 68.75 68.86 L 70.83 67.71 L 72.92 66.00 L 75.00 63.43 L 77.08 60.29 L 79.17 57.71 L 81.25 55.43 L 83.33 53.43 L 85.42 50.57 L 87.50 46.29 L 89.58 40.86 L 91.67 36.00 L 93.75 31.71 L 95.83 28.00 L 97.92 22.29 L 100.00 18.57 L 100 100 L 0 100 Z" fill="url(#grad1)"/>
+                <path d="M 0.00 87.43 L 2.08 87.43 L 4.17 87.43 L 6.25 87.71 L 8.33 88.29 L 10.42 88.00 L 12.50 87.43 L 14.58 86.86 L 16.67 86.86 L 18.75 87.14 L 20.83 87.43 L 22.92 87.14 L 25.00 86.29 L 27.08 85.43 L 29.17 85.43 L 31.25 85.43 L 33.33 85.43 L 35.42 85.14 L 37.50 84.57 L 39.58 83.43 L 41.67 82.86 L 43.75 82.57 L 45.83 82.57 L 47.92 81.71 L 50.00 80.57 L 52.08 79.14 L 54.17 78.00 L 56.25 77.71 L 58.33 77.14 L 60.42 76.00 L 62.50 74.00 L 64.58 72.00 L 66.67 70.29 L 68.75 68.86 L 70.83 67.71 L 72.92 66.00 L 75.00 63.43 L 77.08 60.29 L 79.17 57.71 L 81.25 55.43 L 83.33 53.43 L 85.42 50.57 L 87.50 46.29 L 89.58 40.86 L 91.67 36.00 L 93.75 31.71 L 95.83 28.00 L 97.92 22.29 L 100.00 18.57" fill="none" stroke="#1a7f37" stroke-width="2.4"
+                      stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="mini-x"><span>&rsquo;23</span><span>&rsquo;24</span><span>&rsquo;25</span><span>&rsquo;26</span><span>Aug</span></div>
+        </div>
+        <div class="mini">
+          <p class="mini-title">New repos per month</p>
+          <p class="mini-val">24M</p>
+          <div class="mini-plot">
+            <div class="mini-y"><span>30M</span><span>0</span></div>
+            <div class="plot">
+              <svg class="spark" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2da44e" stop-opacity=".34"/>
+                  <stop offset="100%" stop-color="#2da44e" stop-opacity=".03"/>
+                </linearGradient></defs>
+                <path d="M 0.00 82.63 L 2.08 81.27 L 4.17 81.27 L 6.25 82.17 L 8.33 83.27 L 10.42 83.27 L 12.50 82.50 L 14.58 81.10 L 16.67 80.20 L 18.75 81.73 L 20.83 82.63 L 22.92 83.10 L 25.00 81.27 L 27.08 79.87 L 29.17 79.40 L 31.25 79.87 L 33.33 80.97 L 35.42 80.97 L 37.50 79.10 L 39.58 77.27 L 41.67 76.33 L 43.75 76.97 L 45.83 77.73 L 47.92 77.43 L 50.00 75.57 L 52.08 73.13 L 54.17 71.90 L 56.25 71.90 L 58.33 72.50 L 60.42 72.03 L 62.50 69.13 L 64.58 65.73 L 66.67 63.90 L 68.75 63.43 L 70.83 63.43 L 72.92 62.20 L 75.00 59.60 L 77.08 54.37 L 79.17 52.07 L 81.25 51.30 L 83.33 51.00 L 85.42 48.70 L 87.50 44.23 L 89.58 37.33 L 91.67 33.03 L 93.75 31.03 L 95.83 29.20 L 97.92 24.27 L 100.00 21.03 L 100 100 L 0 100 Z" fill="url(#grad2)"/>
+                <path d="M 0.00 82.63 L 2.08 81.27 L 4.17 81.27 L 6.25 82.17 L 8.33 83.27 L 10.42 83.27 L 12.50 82.50 L 14.58 81.10 L 16.67 80.20 L 18.75 81.73 L 20.83 82.63 L 22.92 83.10 L 25.00 81.27 L 27.08 79.87 L 29.17 79.40 L 31.25 79.87 L 33.33 80.97 L 35.42 80.97 L 37.50 79.10 L 39.58 77.27 L 41.67 76.33 L 43.75 76.97 L 45.83 77.73 L 47.92 77.43 L 50.00 75.57 L 52.08 73.13 L 54.17 71.90 L 56.25 71.90 L 58.33 72.50 L 60.42 72.03 L 62.50 69.13 L 64.58 65.73 L 66.67 63.90 L 68.75 63.43 L 70.83 63.43 L 72.92 62.20 L 75.00 59.60 L 77.08 54.37 L 79.17 52.07 L 81.25 51.30 L 83.33 51.00 L 85.42 48.70 L 87.50 44.23 L 89.58 37.33 L 91.67 33.03 L 93.75 31.03 L 95.83 29.20 L 97.92 24.27 L 100.00 21.03" fill="none" stroke="#1a7f37" stroke-width="2.4"
+                      stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+          </div>
+          <div class="mini-x"><span>&rsquo;23</span><span>&rsquo;24</span><span>&rsquo;25</span><span>&rsquo;26</span><span>Aug</span></div>
+        </div>
+      </div>
+      <p class="d-foot"><b>GitHub reached 1.15B commits per week in August 2026.</b> Weekly statistic; graphs above show monthly activity.</p>
+    </section>
     <section class="slide dslide">
       <div class="d-top"><span>platform / agent-driven growth</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
       <p class="d-kicker">2026 growth rates</p>
