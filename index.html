@@ -174,6 +174,16 @@
   .dslide.play .mini:nth-child(2) .spark{animation-delay:.67s}
   .dslide.play .mini:nth-child(3) .spark{animation-delay:.79s}
 
+  .runs-plot{display:flex;gap:10px;flex:1;margin-top:16px;min-height:0}
+  .runs-y{display:flex;flex-direction:column;justify-content:space-between;
+    font-size:11px;color:#8b949e;padding:1px 0}
+  .runs-slide .plot{flex:1;height:auto;position:relative;
+    background-image:repeating-linear-gradient(to top,#e4ebe6 0 1px,transparent 1px 50%)}
+  .runs-x{display:flex;justify-content:space-between;margin-top:10px;padding-left:42px;
+    font-size:12px;color:#8b949e}
+  .runs-slide .d-foot b{color:var(--ink);font-weight:700}
+  .runs-slide.play .spark{animation-delay:.6s}
+
   /* agentic surfaces slide */
   .surfaces{display:flex;flex-direction:column}
   .s-head{padding:64px 70px 0;text-align:center;opacity:0;flex:none}
@@ -342,27 +352,37 @@
       </div>
       <p class="d-foot"><b>GitHub reached 1.15B commits per week in August 2026.</b> Weekly statistic; graphs above show monthly activity.<br><span class="d-src">Charts: GitHub Blog, "The August 17 outage, and the work ahead," 2026. Weekly figure: GitHub Corp Comms external reference tracker.</span></p>
     </section>
-    <section class="slide dslide">
-      <div class="d-top"><span>platform / agent-driven growth</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
-      <p class="d-kicker">2026 growth rates</p>
-      <h2 class="d-title">Agent Driven Growth</h2>
+    <section class="slide dslide runs-slide">
+      <div class="d-top"><span>platform / automation</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
+      <p class="d-kicker">January to August 2026</p>
+      <h2 class="d-title">Automation Is Compounding</h2>
       <div class="d-body">
         <div class="growth-left">
-          <p class="stat-label">Agent-created pull requests</p>
-          <p class="stat-num">17.8M</p>
-          <span class="chip"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.8 10.8 9.4H1.2z" fill="currentColor"/></svg>4x in 6 months</span>
-          <p class="stat-desc">Created by agents in March 2026 alone.</p>
+          <p class="stat-label">Completed GitHub Actions runs</p>
+          <p class="stat-num">115.4M</p>
+          <span class="chip"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.8 10.8 9.4H1.2z" fill="currentColor"/></svg>nearly 4x since January</span>
+          <p class="stat-desc">August peak, up from roughly 15M to 30M early in 2026.</p>
         </div>
         <div class="chart">
-          <p class="chart-cap">Agent-created pull requests per month</p>
-          <div class="chart-plot">
-            <div class="bar-wrap"><div class="bar" style="height:20.5%"></div></div>
-            <div class="bar-wrap"><span class="bar-val">17.8M</span><div class="bar" style="height:82%"></div></div>
+          <p class="chart-cap">Growth in completed GitHub Actions runs</p>
+          <div class="runs-plot">
+            <div class="runs-y"><span>140M</span><span>70M</span><span>0</span></div>
+            <div class="plot">
+              <svg class="spark" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="gradRuns" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2da44e" stop-opacity=".34"/>
+                  <stop offset="100%" stop-color="#2da44e" stop-opacity=".03"/>
+                </linearGradient></defs>
+                <path d="M 0.23 89.13 L 0.82 81.95 L 0.99 79.98 L 1.69 84.52 L 1.72 84.77 L 2.18 88.14 L 2.59 87.48 L 3.03 89.90 L 3.47 88.58 L 3.87 83.57 L 4.34 84.70 L 5.01 87.15 L 5.47 85.69 L 5.94 89.06 L 6.09 88.95 L 6.90 77.34 L 6.93 77.34 L 7.78 75.48 L 7.83 75.40 L 8.65 85.72 L 8.82 88.03 L 9.52 76.57 L 9.55 75.95 L 10.02 73.94 L 10.43 74.38 L 11.27 76.90 L 11.30 77.45 L 11.74 87.81 L 12.17 84.52 L 13.02 73.79 L 13.63 72.88 L 13.86 73.87 L 13.89 74.01 L 14.71 87.63 L 14.85 87.74 L 15.61 73.06 L 15.64 72.91 L 16.16 71.60 L 16.51 72.95 L 17.36 85.72 L 17.50 87.30 L 18.23 74.78 L 18.26 74.19 L 18.70 71.01 L 19.13 72.07 L 19.98 76.83 L 20.01 77.67 L 20.62 87.34 L 20.85 82.87 L 21.61 71.27 L 22.28 71.27 L 22.57 72.47 L 22.60 72.62 L 23.38 86.82 L 23.47 86.90 L 24.32 73.43 L 24.34 73.28 L 25.19 70.35 L 25.22 70.35 L 26.06 83.93 L 26.18 85.51 L 26.91 71.30 L 26.94 70.72 L 27.69 68.01 L 27.81 68.05 L 28.65 73.35 L 28.68 74.23 L 29.06 84.00 L 29.56 76.35 L 30.23 67.20 L 30.43 67.20 L 31.28 68.23 L 31.30 68.30 L 31.95 84.19 L 32.18 83.57 L 33.02 66.03 L 33.05 65.96 L 33.49 65.01 L 33.90 65.52 L 34.74 81.92 L 35.09 84.08 L 35.61 65.89 L 35.64 65.41 L 36.02 64.68 L 36.52 64.79 L 37.36 74.56 L 38.00 83.31 L 38.24 74.93 L 38.26 73.24 L 38.91 63.76 L 39.66 62.63 L 39.98 65.67 L 40.01 66.36 L 40.56 83.02 L 40.86 82.76 L 41.64 63.84 L 41.73 63.76 L 42.57 64.20 L 42.60 64.53 L 43.45 83.35 L 43.74 84.08 L 44.32 67.64 L 44.35 67.17 L 45.14 61.82 L 45.22 61.90 L 46.07 73.32 L 46.36 82.69 L 46.91 70.75 L 46.94 68.92 L 47.58 60.98 L 47.82 60.98 L 48.66 62.92 L 48.69 63.07 L 49.30 82.58 L 49.56 81.92 L 50.41 60.91 L 50.50 60.80 L 51.28 61.13 L 51.31 61.27 L 52.15 81.70 L 52.18 81.70 L 53.03 60.40 L 53.29 59.55 L 53.84 60.80 L 53.90 60.87 L 54.75 77.49 L 54.98 81.26 L 55.62 68.27 L 55.65 66.95 L 56.29 58.64 L 57.08 57.54 L 57.37 59.37 L 57.40 59.59 L 58.15 80.23 L 58.27 77.78 L 59.11 54.94 L 59.14 54.83 L 59.99 59.15 L 60.02 59.41 L 60.75 79.36 L 60.86 79.32 L 61.71 56.04 L 61.74 55.89 L 62.06 54.69 L 62.61 55.34 L 63.45 71.49 L 63.72 79.43 L 64.33 69.33 L 64.36 68.52 L 65.20 55.82 L 65.32 55.27 L 66.07 59.41 L 66.10 60.29 L 66.80 79.10 L 66.95 77.60 L 67.79 53.95 L 68.40 53.81 L 68.67 55.53 L 68.70 55.82 L 69.51 78.33 L 69.57 78.29 L 70.41 52.78 L 70.44 52.64 L 71.29 50.26 L 71.43 50.18 L 72.16 70.24 L 72.39 76.90 L 73.03 55.97 L 73.06 55.01 L 73.59 49.74 L 73.91 50.07 L 74.75 62.12 L 74.78 62.85 L 75.31 76.35 L 75.66 70.79 L 76.38 49.01 L 76.53 49.23 L 77.37 52.27 L 77.40 52.56 L 78.07 76.28 L 78.28 76.13 L 79.12 49.56 L 79.15 49.45 L 79.99 48.83 L 80.02 48.79 L 80.84 72.44 L 81.01 75.37 L 81.71 52.38 L 81.74 51.28 L 82.59 46.52 L 82.62 46.49 L 83.46 51.13 L 83.49 52.01 L 84.04 71.16 L 84.36 59.88 L 85.09 42.09 L 85.79 41.65 L 86.08 43.37 L 86.11 43.63 L 86.92 70.02 L 87.04 70.31 L 87.80 38.84 L 87.97 37.23 L 88.67 38.84 L 88.70 39.02 L 89.55 65.08 L 89.66 68.23 L 90.42 39.13 L 90.45 37.99 L 90.91 34.22 L 91.32 35.69 L 92.17 46.41 L 92.20 47.80 L 92.81 65.70 L 93.07 53.44 L 93.88 17.65 L 93.91 17.65 L 94.50 44.88 L 95.43 60.25 L 95.63 22.74 L 95.84 51.44 L 96.30 20.37 L 96.53 27.38 L 96.91 20.59 L 97.67 25.55 L 98.25 50.66 L 98.43 55.23 L 99.13 24.70 L 99.30 19.16 L 100.00 23.94 L 100 100 L 0 100 Z" fill="url(#gradRuns)"/>
+                <path d="M 0.23 89.13 L 0.82 81.95 L 0.99 79.98 L 1.69 84.52 L 1.72 84.77 L 2.18 88.14 L 2.59 87.48 L 3.03 89.90 L 3.47 88.58 L 3.87 83.57 L 4.34 84.70 L 5.01 87.15 L 5.47 85.69 L 5.94 89.06 L 6.09 88.95 L 6.90 77.34 L 6.93 77.34 L 7.78 75.48 L 7.83 75.40 L 8.65 85.72 L 8.82 88.03 L 9.52 76.57 L 9.55 75.95 L 10.02 73.94 L 10.43 74.38 L 11.27 76.90 L 11.30 77.45 L 11.74 87.81 L 12.17 84.52 L 13.02 73.79 L 13.63 72.88 L 13.86 73.87 L 13.89 74.01 L 14.71 87.63 L 14.85 87.74 L 15.61 73.06 L 15.64 72.91 L 16.16 71.60 L 16.51 72.95 L 17.36 85.72 L 17.50 87.30 L 18.23 74.78 L 18.26 74.19 L 18.70 71.01 L 19.13 72.07 L 19.98 76.83 L 20.01 77.67 L 20.62 87.34 L 20.85 82.87 L 21.61 71.27 L 22.28 71.27 L 22.57 72.47 L 22.60 72.62 L 23.38 86.82 L 23.47 86.90 L 24.32 73.43 L 24.34 73.28 L 25.19 70.35 L 25.22 70.35 L 26.06 83.93 L 26.18 85.51 L 26.91 71.30 L 26.94 70.72 L 27.69 68.01 L 27.81 68.05 L 28.65 73.35 L 28.68 74.23 L 29.06 84.00 L 29.56 76.35 L 30.23 67.20 L 30.43 67.20 L 31.28 68.23 L 31.30 68.30 L 31.95 84.19 L 32.18 83.57 L 33.02 66.03 L 33.05 65.96 L 33.49 65.01 L 33.90 65.52 L 34.74 81.92 L 35.09 84.08 L 35.61 65.89 L 35.64 65.41 L 36.02 64.68 L 36.52 64.79 L 37.36 74.56 L 38.00 83.31 L 38.24 74.93 L 38.26 73.24 L 38.91 63.76 L 39.66 62.63 L 39.98 65.67 L 40.01 66.36 L 40.56 83.02 L 40.86 82.76 L 41.64 63.84 L 41.73 63.76 L 42.57 64.20 L 42.60 64.53 L 43.45 83.35 L 43.74 84.08 L 44.32 67.64 L 44.35 67.17 L 45.14 61.82 L 45.22 61.90 L 46.07 73.32 L 46.36 82.69 L 46.91 70.75 L 46.94 68.92 L 47.58 60.98 L 47.82 60.98 L 48.66 62.92 L 48.69 63.07 L 49.30 82.58 L 49.56 81.92 L 50.41 60.91 L 50.50 60.80 L 51.28 61.13 L 51.31 61.27 L 52.15 81.70 L 52.18 81.70 L 53.03 60.40 L 53.29 59.55 L 53.84 60.80 L 53.90 60.87 L 54.75 77.49 L 54.98 81.26 L 55.62 68.27 L 55.65 66.95 L 56.29 58.64 L 57.08 57.54 L 57.37 59.37 L 57.40 59.59 L 58.15 80.23 L 58.27 77.78 L 59.11 54.94 L 59.14 54.83 L 59.99 59.15 L 60.02 59.41 L 60.75 79.36 L 60.86 79.32 L 61.71 56.04 L 61.74 55.89 L 62.06 54.69 L 62.61 55.34 L 63.45 71.49 L 63.72 79.43 L 64.33 69.33 L 64.36 68.52 L 65.20 55.82 L 65.32 55.27 L 66.07 59.41 L 66.10 60.29 L 66.80 79.10 L 66.95 77.60 L 67.79 53.95 L 68.40 53.81 L 68.67 55.53 L 68.70 55.82 L 69.51 78.33 L 69.57 78.29 L 70.41 52.78 L 70.44 52.64 L 71.29 50.26 L 71.43 50.18 L 72.16 70.24 L 72.39 76.90 L 73.03 55.97 L 73.06 55.01 L 73.59 49.74 L 73.91 50.07 L 74.75 62.12 L 74.78 62.85 L 75.31 76.35 L 75.66 70.79 L 76.38 49.01 L 76.53 49.23 L 77.37 52.27 L 77.40 52.56 L 78.07 76.28 L 78.28 76.13 L 79.12 49.56 L 79.15 49.45 L 79.99 48.83 L 80.02 48.79 L 80.84 72.44 L 81.01 75.37 L 81.71 52.38 L 81.74 51.28 L 82.59 46.52 L 82.62 46.49 L 83.46 51.13 L 83.49 52.01 L 84.04 71.16 L 84.36 59.88 L 85.09 42.09 L 85.79 41.65 L 86.08 43.37 L 86.11 43.63 L 86.92 70.02 L 87.04 70.31 L 87.80 38.84 L 87.97 37.23 L 88.67 38.84 L 88.70 39.02 L 89.55 65.08 L 89.66 68.23 L 90.42 39.13 L 90.45 37.99 L 90.91 34.22 L 91.32 35.69 L 92.17 46.41 L 92.20 47.80 L 92.81 65.70 L 93.07 53.44 L 93.88 17.65 L 93.91 17.65 L 94.50 44.88 L 95.43 60.25 L 95.63 22.74 L 95.84 51.44 L 96.30 20.37 L 96.53 27.38 L 96.91 20.59 L 97.67 25.55 L 98.25 50.66 L 98.43 55.23 L 99.13 24.70 L 99.30 19.16 L 100.00 23.94" fill="none" stroke="#1a7f37" stroke-width="2"
+                      stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
           </div>
-          <div class="chart-x"><span>Sep 2025</span><span>Mar 2026</span></div>
+          <div class="runs-x"><span>2026</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span></div>
         </div>
       </div>
-      <p class="d-foot">Sources: GitHub Corp Comms external reference tracker and GitHub Blog, 2026. Chart is illustrative.</p>
+      <p class="d-foot"><b>Azure now serves roughly 58% of GitHub's platform load, up from 12% in May.</b> That expanded footprint supported this growth.<br><span class="d-src">Source: GitHub Blog, "The August 17 outage, and the work ahead," 2026.</span></p>
     </section>
     <section class="slide"><img src="slides_png/slide-05-transition.png" alt="Transition statement"></section>
     <section class="slide" id="issues">
