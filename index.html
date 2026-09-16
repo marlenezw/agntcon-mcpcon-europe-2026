@@ -260,6 +260,27 @@
   .qslide.play .q-rule{animation:tsUp .5s cubic-bezier(.22,.9,.32,1) .12s both}
   .qslide.play .q-title{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .22s both}
 
+  /* modern github experience slide */
+  .d-body.mg-body{align-items:stretch;gap:26px;padding:18px 0 6px}
+  .mg-card{flex:1;position:relative;display:flex;flex-direction:column;
+    justify-content:center;overflow:hidden;
+    background:#f6faf7;border:1px solid #d7e6dc;border-radius:16px;padding:34px 30px;
+    align-self:center;height:312px;box-shadow:0 1px 2px rgba(31,35,40,.05);opacity:0}
+  .mg-num{position:absolute;top:16px;right:22px;font-size:68px;line-height:1;
+    font-weight:800;letter-spacing:-3px;color:#116329;opacity:.12;
+    font-variant-numeric:tabular-nums}
+  .mg-ico{flex:none;width:48px;height:48px;border-radius:13px;display:flex;
+    align-items:center;justify-content:center;background:#dafbe1;color:#116329;
+    border:1px solid #aceebb}
+  .mg-ico svg{width:23px;height:23px;display:block}
+  .mg-h{margin:20px 0 0;font-size:31px;line-height:1.14;letter-spacing:-.9px;
+    font-weight:800;color:var(--ink)}
+  .mg-p{margin:11px 0 0;font-size:17px;line-height:1.5;color:var(--mute)}
+  .mg-slide .d-foot b{color:var(--ink);font-weight:700}
+  .mg-slide.play .mg-card:nth-child(1){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .3s both}
+  .mg-slide.play .mg-card:nth-child(2){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .42s both}
+  .mg-slide.play .mg-card:nth-child(3){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .54s both}
+
   /* agentic surfaces slide */
   .surfaces{display:flex;flex-direction:column}
   .s-head{padding:64px 70px 0;text-align:center;opacity:0;flex:none}
@@ -507,8 +528,17 @@
       </div>
       <p class="d-foot"><b>The same platform, pulled in two directions at once.</b> Reaction counts as of September 2026.<br><span class="d-src">Source: public issues on GitHub.</span></p>
     </section>
-    <section class="slide"><img src="slides_png/slide-07-future.png" alt="The future is already here"></section>
-    <section class="slide"><img src="slides_png/slide-08-experience.png" alt="The Modern GitHub Experience"></section>
+    <section class="slide dslide mg-slide">
+      <div class="d-top"><span>product / what we have been building</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
+      <p class="d-kicker">what comes next</p>
+      <h2 class="d-title">The Modern GitHub Experience</h2>
+      <div class="d-body mg-body">
+        <div class="mg-card"><span class="mg-num">01</span><span class="mg-ico"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/></svg></span><h3 class="mg-h">Issues</h3><p class="mg-p">Where the work gets defined.</p></div>
+        <div class="mg-card"><span class="mg-num">02</span><span class="mg-ico"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/></svg></span><h3 class="mg-h">Pull Requests</h3><p class="mg-p">Where the work gets reviewed.</p></div>
+        <div class="mg-card"><span class="mg-num">03</span><span class="mg-ico"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M7.467.133a1.748 1.748 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.697 1.697 0 0 1-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 0 1 1.217-1.667Zm.61 1.429a.25.25 0 0 0-.153 0l-5.25 1.68a.25.25 0 0 0-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.34 4.366 3.297a.196.196 0 0 0 .154 0c2.245-.956 3.582-2.104 4.366-3.298C13.225 9.666 13.5 8.36 13.5 7V3.48a.251.251 0 0 0-.174-.237l-5.25-1.68ZM11.28 6.28l-3.5 3.5a.75.75 0 0 1-1.06 0l-1.5-1.5a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l.97.97 2.97-2.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734Z"/></svg></span><h3 class="mg-h">Maintainer Controls</h3><p class="mg-p">Where the rules get set.</p></div>
+      </div>
+      <p class="d-foot"><b>Built for a workflow where humans and agents contribute side by side.</b></p>
+    </section>
     <section class="slide slide-video"><video src="assets/gh-attach-demo.mp4" muted playsinline preload="auto"></video></section>
     <section class="slide slide-video"><video src="assets/gh-stack-demo.mp4" muted playsinline preload="auto"></video></section>
     <section class="slide surfaces">
