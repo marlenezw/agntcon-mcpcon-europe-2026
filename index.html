@@ -47,6 +47,43 @@
   }
   #issues.play .card{animation:drop .7s cubic-bezier(.34,1.32,.5,1) both}
 
+  /* developers and AI slide */
+  .ai-slide .d-title{font-size:48px}
+  .ai-slide .d-kicker{margin-top:20px}
+  .d-body.ai-body{align-items:stretch;gap:34px;padding:18px 0 4px}
+  .ai-col{flex:1;display:flex;flex-direction:column;gap:13px;min-width:0}
+  .ai-head{flex:none;height:54px;padding:0 2px}
+  .ai-head h3{margin:0;font-size:14px;font-weight:800;letter-spacing:1.6px;
+    text-transform:uppercase;display:inline-flex;align-items:center;gap:9px}
+  .ai-head h3::before{content:"";width:22px;height:4px;border-radius:2px}
+  .ai-head.agentic h3{color:#116329}
+  .ai-head.agentic h3::before{background:linear-gradient(90deg,#2da44e,#116329)}
+  .ai-head.control h3{color:#1f2328}
+  .ai-head.control h3::before{background:linear-gradient(90deg,#57606a,#1f2328)}
+  .ai-head p{margin:7px 0 0;font-size:14px;color:var(--mute)}
+  .icard{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;
+    box-shadow:0 1px 2px rgba(31,35,40,.05);opacity:0;will-change:transform,opacity}
+  .ai-col:first-child .icard{background:#f7fbf8;border-color:#d7e6dc}
+  .ai-col:last-child .icard{background:#fafbfc;border-color:#dfe3e8}
+  .ic-top{display:flex;align-items:center;gap:8px}
+  .ist{width:15px;height:15px;flex:none;display:block}
+  .ist.open{color:#1a7f37}
+  .ist.done{color:#8b949e}
+  .ic-repo{font-family:var(--mono);font-size:12.5px;color:var(--mute);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ic-repo b{font-weight:700;color:#57606a}
+  .ic-pill{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:5px;
+    font-size:13px;font-weight:700;color:#57606a;background:#f2f4f6;
+    border:1px solid var(--line);padding:2px 10px;border-radius:999px;
+    font-variant-numeric:tabular-nums}
+  .ic-pill svg{width:11px;height:11px;display:block}
+  .ic-ttl{margin:8px 0 0;font-size:16.5px;font-weight:700;line-height:1.32;color:var(--ink)}
+  .ai-slide .d-foot b{color:var(--ink);font-weight:700}
+  .ai-slide.play .ai-head{animation:tsUp .55s cubic-bezier(.22,.9,.32,1) .26s both}
+  .ai-slide.play .icard{animation:riseCard .58s cubic-bezier(.24,.95,.35,1) both}
+  @keyframes riseCard{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:translateY(0)}}
+
   /* title slide */
   .title-slide{display:flex;flex-direction:column;justify-content:center;
     padding:0 84px 118px 300px;background:
@@ -454,24 +491,21 @@
       </div>
       <div class="q-band"><div class="q-grid"><i style="background:#ebedf0;animation-delay:0.26s"></i><i style="background:#ebedf0;animation-delay:0.27s"></i><i style="background:#ebedf0;animation-delay:0.28s"></i><i style="background:#ebedf0;animation-delay:0.30s"></i><i style="background:#ebedf0;animation-delay:0.30s"></i><i style="background:#ebedf0;animation-delay:0.32s"></i><i style="background:#ebedf0;animation-delay:0.33s"></i><i style="background:#ebedf0;animation-delay:0.34s"></i><i style="background:#ebedf0;animation-delay:0.35s"></i><i style="background:#ebedf0;animation-delay:0.36s"></i><i style="background:#aceebb;animation-delay:0.37s"></i><i style="background:#4ac26b;animation-delay:0.39s"></i><i style="background:#ebedf0;animation-delay:0.40s"></i><i style="background:#2da44e;animation-delay:0.41s"></i><i style="background:#ebedf0;animation-delay:0.42s"></i><i style="background:#ebedf0;animation-delay:0.43s"></i><i style="background:#ebedf0;animation-delay:0.44s"></i><i style="background:#aceebb;animation-delay:0.45s"></i><i style="background:#ebedf0;animation-delay:0.46s"></i><i style="background:#aceebb;animation-delay:0.48s"></i><i style="background:#aceebb;animation-delay:0.48s"></i><i style="background:#ebedf0;animation-delay:0.50s"></i><i style="background:#ebedf0;animation-delay:0.51s"></i><i style="background:#ebedf0;animation-delay:0.52s"></i><i style="background:#ebedf0;animation-delay:0.53s"></i><i style="background:#ebedf0;animation-delay:0.54s"></i><i style="background:#ebedf0;animation-delay:0.55s"></i><i style="background:#ebedf0;animation-delay:0.57s"></i><i style="background:#ebedf0;animation-delay:0.57s"></i><i style="background:#2da44e;animation-delay:0.59s"></i><i style="background:#ebedf0;animation-delay:0.60s"></i><i style="background:#ebedf0;animation-delay:0.61s"></i><i style="background:#ebedf0;animation-delay:0.62s"></i><i style="background:#aceebb;animation-delay:0.63s"></i><i style="background:#aceebb;animation-delay:0.64s"></i><i style="background:#ebedf0;animation-delay:0.66s"></i><i style="background:#2da44e;animation-delay:0.67s"></i><i style="background:#116329;animation-delay:0.68s"></i><i style="background:#ebedf0;animation-delay:0.69s"></i><i style="background:#aceebb;animation-delay:0.70s"></i><i style="background:#ebedf0;animation-delay:0.71s"></i><i style="background:#116329;animation-delay:0.72s"></i><i style="background:#aceebb;animation-delay:0.73s"></i><i style="background:#ebedf0;animation-delay:0.75s"></i><i style="background:#ebedf0;animation-delay:0.76s"></i><i style="background:#aceebb;animation-delay:0.77s"></i><i style="background:#116329;animation-delay:0.78s"></i><i style="background:#ebedf0;animation-delay:0.79s"></i><i style="background:#aceebb;animation-delay:0.80s"></i><i style="background:#aceebb;animation-delay:0.81s"></i><i style="background:#ebedf0;animation-delay:0.82s"></i><i style="background:#4ac26b;animation-delay:0.84s"></i></div></div>
     </section>
-    <section class="slide" id="issues">
-      <div class="heads">
-        <div><h2>Leaning In</h2><p>Developers asking for more agent power</p></div>
-        <div><h2>Overwhelmed</h2><p>Maintainers asking for guardrails</p></div>
-      </div>
-      <div class="divider"></div>
-      <div class="cols">
-        <div class="col">
-          <div class="card"><div class="row"><span class="dot"></span><span class="repo">cli/cli&nbsp;#11845</span><span class="pill">👍 44</span></div><p class="ttl">gh agent-task create shouldn't require OAUTH tokens</p></div>
-          <div class="card"><div class="row"><span class="dot"></span><span class="repo">cli/cli&nbsp;#12960</span><span class="pill">👍 63</span></div><p class="ttl">Image/file attachments in gh issue create (critical for agentic workflows)</p></div>
-          <div class="card"><div class="row"><span class="dot"></span><span class="repo">github/spec-kit&nbsp;#269</span><span class="pill">👍 21</span></div><p class="ttl">Support multiple coding agents</p></div>
+    <section class="slide dslide ai-slide" id="issues">
+      <div class="d-top"><span>community / signals from developers</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
+      <p class="d-kicker">issues and reactions on github</p>
+      <h2 class="d-title">Developers and AI</h2>
+      <div class="d-body ai-body">
+        <div class="ai-col">
+          <div class="ai-head agentic"><h3>More Agentic</h3><p>Give agents more reach</p></div>
+          <div class="icard"><div class="ic-top"><svg class="ist done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0Z"/><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"/></svg><span class="ic-repo">anthropics/claude-code<b>#6235</b></span><span class="ic-pill"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.746 0 1.43.194 1.913.64.492.454.721 1.082.721 1.767 0 .916-.176 1.86-.474 2.66-.288.775-.745 1.548-1.385 1.985-.583.399-1.272.52-1.94.586-.674.066-1.418.066-2.166.066h-.312c-.748 0-1.492 0-2.165-.066-.669-.066-1.358-.187-1.941-.586-.64-.437-1.097-1.21-1.385-1.986-.298-.799-.474-1.743-.474-2.659 0-.685.229-1.313.72-1.767C4.322 5.194 5.006 5 5.753 5h1.421l-.014-.113C7.09 4.369 7.003 3.717 7.003 3.25c0-.922.15-1.719.656-2.3.51-.589 1.247-.797 2.01-.884Z"/></svg>5,153</span></div><p class="ic-ttl">Feature request: support AGENTS.md</p></div><div class="icard"><div class="ic-top"><svg class="ist open" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/></svg><span class="ic-repo">Aider-AI/aider<b>#3314</b></span><span class="ic-pill"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.746 0 1.43.194 1.913.64.492.454.721 1.082.721 1.767 0 .916-.176 1.86-.474 2.66-.288.775-.745 1.548-1.385 1.985-.583.399-1.272.52-1.94.586-.674.066-1.418.066-2.166.066h-.312c-.748 0-1.492 0-2.165-.066-.669-.066-1.358-.187-1.941-.586-.64-.437-1.097-1.21-1.385-1.986-.298-.799-.474-1.743-.474-2.659 0-.685.229-1.313.72-1.767C4.322 5.194 5.006 5 5.753 5h1.421l-.014-.113C7.09 4.369 7.003 3.717 7.003 3.25c0-.922.15-1.719.656-2.3.51-.589 1.247-.797 2.01-.884Z"/></svg>196</span></div><p class="ic-ttl">MCP support</p></div><div class="icard"><div class="ic-top"><svg class="ist done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0Z"/><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"/></svg><span class="ic-repo">cli/cli<b>#13256</b></span><span class="ic-pill"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.746 0 1.43.194 1.913.64.492.454.721 1.082.721 1.767 0 .916-.176 1.86-.474 2.66-.288.775-.745 1.548-1.385 1.985-.583.399-1.272.52-1.94.586-.674.066-1.418.066-2.166.066h-.312c-.748 0-1.492 0-2.165-.066-.669-.066-1.358-.187-1.941-.586-.64-.437-1.097-1.21-1.385-1.986-.298-.799-.474-1.743-.474-2.659 0-.685.229-1.313.72-1.767C4.322 5.194 5.006 5 5.753 5h1.421l-.014-.113C7.09 4.369 7.003 3.717 7.003 3.25c0-.922.15-1.719.656-2.3.51-.589 1.247-.797 2.01-.884Z"/></svg>188</span></div><p class="ic-ttl">Attach local images to comments, issues, and pull requests</p></div>
         </div>
-        <div class="col">
-          <div class="card"><div class="row"><span class="dot"></span><span class="repo">rust-lang/this-week-in-rust&nbsp;#6861</span><span class="pill">👍 60</span></div><p class="ttl">Suspicious AI-generated article (potential supply-chain attack?)</p></div>
-          <div class="card"><div class="row"><span class="dot"></span><span class="repo">mastodon/mastodon&nbsp;#38072</span><span class="pill">👍 40</span></div><p class="ttl">Consider not allowing LLM and AI contributions</p></div>
-          <div class="card"><div class="row"><span class="dot"></span><span class="repo">rust-lang/leadership-council&nbsp;#273</span><span class="pill">👍 38</span></div><p class="ttl">Policy proposal: no low-effort contributions</p></div>
+        <div class="ai-col">
+          <div class="ai-head control"><h3>More Control</h3><p>Keep humans in charge</p></div>
+          <div class="icard"><div class="ic-top"><svg class="ist open" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/></svg><span class="ic-repo">tldraw/tldraw<b>#7695</b></span><span class="ic-pill"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.746 0 1.43.194 1.913.64.492.454.721 1.082.721 1.767 0 .916-.176 1.86-.474 2.66-.288.775-.745 1.548-1.385 1.985-.583.399-1.272.52-1.94.586-.674.066-1.418.066-2.166.066h-.312c-.748 0-1.492 0-2.165-.066-.669-.066-1.358-.187-1.941-.586-.64-.437-1.097-1.21-1.385-1.986-.298-.799-.474-1.743-.474-2.659 0-.685.229-1.313.72-1.767C4.322 5.194 5.006 5 5.753 5h1.421l-.014-.113C7.09 4.369 7.003 3.717 7.003 3.25c0-.922.15-1.719.656-2.3.51-.589 1.247-.797 2.01-.884Z"/></svg>194</span></div><p class="ic-ttl">Contributions policy: automatically closing external pull requests</p></div><div class="icard"><div class="ic-top"><svg class="ist done" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0Z"/><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"/></svg><span class="ic-repo">RsyncProject/rsync<b>#934</b></span><span class="ic-pill"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.746 0 1.43.194 1.913.64.492.454.721 1.082.721 1.767 0 .916-.176 1.86-.474 2.66-.288.775-.745 1.548-1.385 1.985-.583.399-1.272.52-1.94.586-.674.066-1.418.066-2.166.066h-.312c-.748 0-1.492 0-2.165-.066-.669-.066-1.358-.187-1.941-.586-.64-.437-1.097-1.21-1.385-1.986-.298-.799-.474-1.743-.474-2.659 0-.685.229-1.313.72-1.767C4.322 5.194 5.006 5 5.753 5h1.421l-.014-.113C7.09 4.369 7.003 3.717 7.003 3.25c0-.922.15-1.719.656-2.3.51-.589 1.247-.797 2.01-.884Z"/></svg>159</span></div><p class="ic-ttl">Remove all LLM generated commits before people get hurt by this nonsense</p></div><div class="icard"><div class="ic-top"><svg class="ist open" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"/></svg><span class="ic-repo">NixOS/nixpkgs<b>#551976</b></span><span class="ic-pill"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.746 0 1.43.194 1.913.64.492.454.721 1.082.721 1.767 0 .916-.176 1.86-.474 2.66-.288.775-.745 1.548-1.385 1.985-.583.399-1.272.52-1.94.586-.674.066-1.418.066-2.166.066h-.312c-.748 0-1.492 0-2.165-.066-.669-.066-1.358-.187-1.941-.586-.64-.437-1.097-1.21-1.385-1.986-.298-.799-.474-1.743-.474-2.659 0-.685.229-1.313.72-1.767C4.322 5.194 5.006 5 5.753 5h1.421l-.014-.113C7.09 4.369 7.003 3.717 7.003 3.25c0-.922.15-1.719.656-2.3.51-.589 1.247-.797 2.01-.884Z"/></svg>76</span></div><p class="ic-ttl">Instantly close PRs that do not contain the automation/AI disclosure</p></div>
         </div>
       </div>
+      <p class="d-foot"><b>The same platform, pulled in two directions at once.</b> Reaction counts as of September 2026.<br><span class="d-src">Source: public issues on GitHub.</span></p>
     </section>
     <section class="slide"><img src="slides_png/slide-07-future.png" alt="The future is already here"></section>
     <section class="slide"><img src="slides_png/slide-08-experience.png" alt="The Modern GitHub Experience"></section>
@@ -542,10 +576,10 @@
 
   function playIssues(){
     const sec=document.getElementById('issues');
-    const cards=[...sec.querySelectorAll('.card')];
+    const cards=[...sec.querySelectorAll('.icard')];
     sec.classList.remove("play");cards.forEach(c=>{c.style.animationDelay="";const im=c.querySelector(".s-shot img");if(im)im.style.animationDelay="";});
     void sec.offsetWidth;sec.classList.add('play');
-    [0,3,1,4,2,5].forEach((idx,n)=>{if(cards[idx])cards[idx].style.animationDelay=(0.3+n*0.16)+'s';});
+    [0,3,1,4,2,5].forEach((idx,n)=>{if(cards[idx])cards[idx].style.animationDelay=(0.36+n*0.11)+'s';});
   }
   function playSurfaces(){
     const sec=document.querySelector('.surfaces');
@@ -563,7 +597,7 @@
     if(slides[i].id==='issues') playIssues();
     if(slides[i].classList.contains('surfaces')) playSurfaces();
     if(slides[i].classList.contains('title-slide')) replay(slides[i]);
-    if(slides[i].classList.contains('dslide')) replay(slides[i]);
+    if(slides[i].classList.contains('dslide')&&slides[i].id!=='issues') replay(slides[i]);
     if(slides[i].classList.contains('qslide')) replay(slides[i]);
   }
   function replay(sec){sec.classList.remove('play');void sec.offsetWidth;sec.classList.add('play');}
