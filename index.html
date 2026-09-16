@@ -48,24 +48,33 @@
   #issues.play .card{animation:drop .7s cubic-bezier(.34,1.32,.5,1) both}
 
   /* agentic surfaces slide */
-  .s-head{padding:74px 70px 0;text-align:center;opacity:0}
+  .surfaces{display:flex;flex-direction:column}
+  .s-head{padding:64px 70px 0;text-align:center;opacity:0;flex:none}
   .s-head h2{margin:0;font-size:44px;color:var(--ink);letter-spacing:-.5px;font-weight:800;line-height:1.1}
   .s-head p{margin:16px 0 0;font-size:20px;color:var(--mute)}
-  .s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:58px 70px 0}
-  .s-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:38px 26px 34px;
-    text-align:center;box-shadow:0 1px 2px rgba(31,35,40,.06);opacity:0;will-change:transform,opacity}
-  .s-ico{width:82px;height:82px;margin:0 auto 24px;border-radius:50%;background:#fff;border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;color:var(--ink)}
-  .s-ico svg{width:40px;height:40px;display:block}
-  .s-card h3{margin:0;font-size:27px;color:var(--ink);font-weight:800;letter-spacing:-.2px}
-  .s-card p{margin:13px 0 0;font-size:17px;line-height:1.45;color:var(--mute)}
+  .s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 44px;
+    flex:1;align-items:center}
+  .s-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(31,35,40,.06),0 8px 24px rgba(31,35,40,.05);
+    opacity:0;will-change:transform,opacity}
+  .s-shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--card);
+    border-bottom:1px solid var(--line)}
+  .s-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+    will-change:transform}
+  .s-shot::after{content:"";position:absolute;inset:0;
+    box-shadow:inset 0 -34px 34px -30px rgba(31,35,40,.16);pointer-events:none}
+  .s-body{padding:20px 22px 24px;text-align:center}
+  .s-body h3{margin:0;font-size:25px;color:var(--ink);font-weight:800;letter-spacing:-.2px}
+  .s-body p{margin:10px 0 0;font-size:16px;line-height:1.45;color:var(--mute)}
   @keyframes riseIn{
     0%{opacity:0;transform:translateY(34px) scale(.985)}
     100%{opacity:1;transform:translateY(0) scale(1)}
   }
+  @keyframes shotIn{0%{transform:scale(1.08)}100%{transform:scale(1)}}
   @keyframes fadeIn{0%{opacity:0;transform:translateY(-14px)}100%{opacity:1;transform:translateY(0)}}
   .surfaces.play .s-head{animation:fadeIn .55s ease both}
   .surfaces.play .s-card{animation:riseIn .62s cubic-bezier(.22,.9,.32,1) both}
+  .surfaces.play .s-shot img{animation:shotIn 1.05s cubic-bezier(.22,.9,.32,1) both}
 
   /* thank-you slide */
   .thanks{display:flex;align-items:center;justify-content:center}
@@ -132,19 +141,25 @@
       </div>
       <div class="s-grid">
         <div class="s-card">
-          <div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.1"/><circle cx="12" cy="3.6" r="1.9"/><circle cx="4.4" cy="18.2" r="1.9"/><circle cx="19.6" cy="18.2" r="1.9"/><path d="M12 8.9V5.5"/><path d="M9.6 14 6 16.7"/><path d="M14.4 14 18 16.7"/></svg></div>
-          <h3>MCP</h3>
-          <p>The GitHub MCP server connects issues, pull requests, and Actions to any agent.</p>
+          <div class="s-shot"><img src="assets/surfaces/mcp.png" alt="GitHub MCP server repository"></div>
+          <div class="s-body">
+            <h3>MCP</h3>
+            <p>The GitHub MCP server connects issues, pull requests, and Actions to any agent.</p>
+          </div>
         </div>
         <div class="s-card">
-          <div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7.3"/><path d="M12 9.1V13l2.7 1.6"/><path d="M17.5 3.6l1.6 1.9-2.3.5"/><path d="M19.1 5.5A7.3 7.3 0 0 0 12 2.9"/></svg></div>
-          <h3>Automations</h3>
-          <p>Scheduled agentic workflows that kick off and keep running on their own.</p>
+          <div class="s-shot"><img src="assets/surfaces/automations.png" alt="GitHub Automations scheduling an agent"></div>
+          <div class="s-body">
+            <h3>Automations</h3>
+            <p>Scheduled agentic workflows that kick off and keep running on their own.</p>
+          </div>
         </div>
         <div class="s-card">
-          <div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h9a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7l-3 2.6V12.5H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z"/><path d="M14 9.2h5a2 2 0 0 1 2 2v3.6a2 2 0 0 1-2 2h-.7v2.4L16 16.8h-2a2 2 0 0 1-2-2"/></svg></div>
-          <h3>Slack + Teams</h3>
-          <p>Delegate to Copilot and track the work right inside your team chat.</p>
+          <div class="s-shot"><img src="assets/surfaces/slack.png" alt="GitHub agent working inside a Slack code channel"></div>
+          <div class="s-body">
+            <h3>Slack + Teams</h3>
+            <p>Delegate to Copilot and track the work right inside your team chat.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -185,16 +200,16 @@
   function playIssues(){
     const sec=document.getElementById('issues');
     const cards=[...sec.querySelectorAll('.card')];
-    sec.classList.remove('play');cards.forEach(c=>c.style.animationDelay='');
+    sec.classList.remove("play");cards.forEach(c=>{c.style.animationDelay="";const im=c.querySelector(".s-shot img");if(im)im.style.animationDelay="";});
     void sec.offsetWidth;sec.classList.add('play');
     [0,3,1,4,2,5].forEach((idx,n)=>{if(cards[idx])cards[idx].style.animationDelay=(0.3+n*0.16)+'s';});
   }
   function playSurfaces(){
     const sec=document.querySelector('.surfaces');
     const cards=[...sec.querySelectorAll('.s-card')];
-    sec.classList.remove('play');cards.forEach(c=>c.style.animationDelay='');
+    sec.classList.remove("play");cards.forEach(c=>{c.style.animationDelay="";const im=c.querySelector(".s-shot img");if(im)im.style.animationDelay="";});
     void sec.offsetWidth;sec.classList.add('play');
-    cards.forEach((c,n)=>c.style.animationDelay=(0.24+n*0.14)+'s');
+    cards.forEach((c,n)=>{const d=(0.24+n*0.14)+'s';c.style.animationDelay=d;const im=c.querySelector('.s-shot img');if(im)im.style.animationDelay=d;});
   }
   function show(n){
     i=Math.max(0,Math.min(slides.length-1,n));
