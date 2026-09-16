@@ -47,6 +47,34 @@
   }
   #issues.play .card{animation:drop .7s cubic-bezier(.34,1.32,.5,1) both}
 
+  /* title slide */
+  .title-slide{display:flex;flex-direction:column;justify-content:center;
+    padding:0 88px 120px;background:
+      radial-gradient(900px 520px at 88% -8%, rgba(9,105,218,.055) 0%, rgba(9,105,218,0) 62%),
+      var(--bg)}
+  .ts-eyebrow{display:flex;align-items:center;gap:11px;color:var(--mute);
+    font-size:15px;font-weight:700;letter-spacing:1.7px;text-transform:uppercase}
+  .ts-eyebrow svg{width:19px;height:19px;display:block;color:var(--ink)}
+  .ts-title{margin:26px 0 0;font-size:84px;line-height:1.04;letter-spacing:-2.2px;
+    font-weight:800;color:var(--ink)}
+  .ts-sub{margin:26px 0 0;font-size:30px;line-height:1.35;font-weight:400;color:var(--mute);
+    max-width:800px}
+  .ts-foot{position:absolute;left:88px;right:88px;bottom:62px;display:flex;
+    justify-content:space-between;align-items:flex-end;gap:30px;
+    border-top:1px solid var(--line);padding-top:22px}
+  .ts-name{margin:0;font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.2px}
+  .ts-role{margin:6px 0 0;font-size:19px;color:var(--mute)}
+  .ts-handles{display:flex;gap:26px;align-items:center;padding-bottom:2px}
+  .ts-handles span{display:flex;align-items:center;gap:9px;font-size:19px;color:var(--mute)}
+  .ts-handles svg{width:19px;height:19px;display:block;flex:none;color:var(--ink)}
+  .ts-handles b{font-weight:600;color:var(--ink)}
+  @keyframes tsUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+  .title-slide .ts-eyebrow,.title-slide .ts-title,.title-slide .ts-sub,.title-slide .ts-foot{opacity:0}
+  .title-slide.play .ts-eyebrow{animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .05s both}
+  .title-slide.play .ts-title{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .16s both}
+  .title-slide.play .ts-sub{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .3s both}
+  .title-slide.play .ts-foot{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .44s both}
+
   /* agentic surfaces slide */
   .surfaces{display:flex;flex-direction:column}
   .s-head{padding:64px 70px 0;text-align:center;opacity:0;flex:none}
@@ -107,7 +135,24 @@
 <body>
 <div class="wrap">
   <div class="stage" id="stage">
-    <section class="slide"><img src="slides_png/slide-01-title.png" alt="Title"></section>
+    <section class="slide title-slide">
+      <div class="ts-eyebrow">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span>AGNTCon Europe 2026</span>
+      </div>
+      <h1 class="ts-title">A New Way To<br>Build Software</h1>
+      <p class="ts-sub">How GitHub is evolving for a human, agent future</p>
+      <div class="ts-foot">
+        <div class="ts-me">
+          <p class="ts-name">Marlene Mhangami</p>
+          <p class="ts-role">I work at GitHub</p>
+        </div>
+        <div class="ts-handles">
+          <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><b>marlenezw</b></span>
+          <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644Z"/></svg><b>marlene_zw</b></span>
+        </div>
+      </div>
+    </section>
     <section class="slide"><img src="slides_png/slide-03-commits.png" alt="Commits line chart"></section>
     <section class="slide"><img src="slides_png/slide-04-agent-growth.png" alt="Agent Driven Growth"></section>
     <section class="slide"><img src="slides_png/slide-05-transition.png" alt="Transition statement"></section>
@@ -219,7 +264,9 @@
     document.getElementById('count').textContent=(i+1)+' / '+slides.length;
     if(slides[i].id==='issues') playIssues();
     if(slides[i].classList.contains('surfaces')) playSurfaces();
+    if(slides[i].classList.contains('title-slide')) replay(slides[i]);
   }
+  function replay(sec){sec.classList.remove('play');void sec.offsetWidth;sec.classList.add('play');}
   function go(d){show(i+d);}
   window.addEventListener('keydown',e=>{
     if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(1);}
