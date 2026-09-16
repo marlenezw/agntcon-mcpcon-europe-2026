@@ -49,31 +49,100 @@
 
   /* title slide */
   .title-slide{display:flex;flex-direction:column;justify-content:center;
-    padding:0 88px 120px;background:
-      radial-gradient(900px 520px at 88% -8%, rgba(9,105,218,.055) 0%, rgba(9,105,218,0) 62%),
+    padding:0 84px 118px 300px;background:
+      radial-gradient(880px 520px at 92% -10%, rgba(26,127,55,.07) 0%, rgba(26,127,55,0) 62%),
       var(--bg)}
+  .ts-band{position:absolute;left:0;top:0;bottom:0;width:228px;overflow:hidden;
+    border-right:1px solid var(--line);
+    background:linear-gradient(180deg,#fcfefc 0%,#f2f9f4 100%);
+    display:flex;align-items:center;justify-content:center}
+  .ts-grid{display:grid;grid-template-columns:repeat(5,20px);gap:8px}
+  .ts-grid i{width:20px;height:20px;border-radius:5px;background:#ebedf0;opacity:0}
+  .title-slide.play .ts-grid i{animation:cellIn .45s cubic-bezier(.22,.9,.32,1) both}
+  @keyframes cellIn{0%{opacity:0;transform:scale(.55)}100%{opacity:1;transform:scale(1)}}
   .ts-eyebrow{display:flex;align-items:center;gap:11px;color:var(--mute);
     font-size:15px;font-weight:700;letter-spacing:1.7px;text-transform:uppercase}
   .ts-eyebrow svg{width:19px;height:19px;display:block;color:var(--ink)}
-  .ts-title{margin:26px 0 0;font-size:84px;line-height:1.04;letter-spacing:-2.2px;
+  .ts-title{margin:24px 0 0;font-size:82px;line-height:1.04;letter-spacing:-2.2px;
     font-weight:800;color:var(--ink)}
-  .ts-sub{margin:26px 0 0;font-size:30px;line-height:1.35;font-weight:400;color:var(--mute);
-    max-width:800px}
-  .ts-foot{position:absolute;left:88px;right:88px;bottom:62px;display:flex;
-    justify-content:space-between;align-items:flex-end;gap:30px;
-    border-top:1px solid var(--line);padding-top:22px}
-  .ts-name{margin:0;font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.2px}
-  .ts-role{margin:6px 0 0;font-size:19px;color:var(--mute)}
-  .ts-handles{display:flex;gap:26px;align-items:center;padding-bottom:2px}
-  .ts-handles span{display:flex;align-items:center;gap:9px;font-size:19px;color:var(--mute)}
-  .ts-handles svg{width:19px;height:19px;display:block;flex:none;color:var(--ink)}
+  .ts-rule{width:76px;height:5px;border-radius:3px;margin:26px 0 0;
+    background:linear-gradient(90deg,#2da44e,#116329)}
+  .ts-sub{margin:22px 0 0;font-size:29px;line-height:1.35;font-weight:400;color:var(--mute);
+    max-width:760px}
+  .ts-foot{position:absolute;left:300px;right:84px;bottom:58px;display:flex;
+    justify-content:space-between;align-items:center;gap:30px;
+    border-top:1px solid var(--line);padding-top:20px}
+  .ts-me{display:flex;align-items:center;gap:15px}
+  .title-slide img.ts-avatar{width:54px;height:54px;border-radius:50%;flex:none;display:block;
+    object-fit:cover;background:var(--card);border:1px solid var(--line)}
+  .ts-name{margin:0;font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.2px}
+  .ts-role{margin:4px 0 0;font-size:18px;color:var(--mute)}
+  .ts-handles{display:flex;gap:24px;align-items:center}
+  .ts-handles span{display:flex;align-items:center;gap:9px;font-size:18px;color:var(--mute)}
+  .ts-handles svg{width:18px;height:18px;display:block;flex:none;color:var(--ink)}
   .ts-handles b{font-weight:600;color:var(--ink)}
   @keyframes tsUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
-  .title-slide .ts-eyebrow,.title-slide .ts-title,.title-slide .ts-sub,.title-slide .ts-foot{opacity:0}
+  .title-slide .ts-eyebrow,.title-slide .ts-title,.title-slide .ts-rule,
+  .title-slide .ts-sub,.title-slide .ts-foot{opacity:0}
   .title-slide.play .ts-eyebrow{animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .05s both}
   .title-slide.play .ts-title{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .16s both}
-  .title-slide.play .ts-sub{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .3s both}
-  .title-slide.play .ts-foot{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .44s both}
+  .title-slide.play .ts-rule{animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .28s both}
+  .title-slide.play .ts-sub{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .36s both}
+  .title-slide.play .ts-foot{animation:tsUp .7s cubic-bezier(.22,.9,.32,1) .5s both}
+
+  /* data slides (octoverse / agent growth) */
+  .dslide{display:flex;flex-direction:column;padding:52px 68px 0;
+    background:linear-gradient(180deg,#ffffff 0%,#f6faf7 100%)}
+  .d-top{flex:none;display:flex;align-items:center;justify-content:space-between;
+    color:var(--mute);font-size:15px;font-weight:500;letter-spacing:.2px}
+  .d-top svg{width:22px;height:22px;display:block;color:var(--ink)}
+  .d-kicker{margin:26px 0 0;font-size:13px;font-weight:700;letter-spacing:1.8px;
+    text-transform:uppercase;color:#1a7f37}
+  .d-title{margin:10px 0 0;font-size:54px;line-height:1.06;letter-spacing:-1.5px;
+    font-weight:800;color:var(--ink)}
+  .d-body{flex:1;display:flex;align-items:center;gap:30px;padding:8px 0 4px}
+  .d-foot{flex:none;margin:0;padding:0 0 24px;font-size:13px;color:#8b949e}
+  .stat{flex:1;align-self:center;height:332px;display:flex;flex-direction:column;justify-content:center;
+    background:#f6faf7;border:1px solid #d7e6dc;border-radius:16px;padding:0 34px;
+    box-shadow:0 1px 2px rgba(31,35,40,.05)}
+  .stat-label{margin:0;font-size:13px;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--mute)}
+  .stat-num{margin:12px 0 0;font-size:80px;line-height:1;letter-spacing:-3px;
+    font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+  .stat-desc{margin:16px 0 0;font-size:18px;line-height:1.45;color:var(--mute)}
+  .chip{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;margin:16px 0 0;
+    background:#dafbe1;border:1px solid #aceebb;color:#116329;
+    font-size:14px;font-weight:700;padding:4px 13px;border-radius:999px}
+  .chip svg{width:11px;height:11px;display:block;flex:none}
+  .growth-left{flex:0 0 392px}
+  .growth-left .stat-label,.growth-left .stat-num,.growth-left .stat-desc{max-width:360px}
+  .chart{flex:1;align-self:center;height:332px;display:flex;flex-direction:column;
+    background:#f6faf7;border:1px solid #d7e6dc;border-radius:16px;padding:22px 40px 20px;
+    box-shadow:0 1px 2px rgba(31,35,40,.05)}
+  .chart-cap{margin:0;font-size:13px;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--mute)}
+  .chart-plot{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:96px;
+    margin-top:16px;border-bottom:1px solid #d7e6dc}
+  .bar-wrap{width:126px;height:100%;display:flex;flex-direction:column;
+    justify-content:flex-end;align-items:center}
+  .bar-val{font-size:19px;font-weight:700;color:#116329;margin-bottom:9px;opacity:0}
+  .bar{width:100%;border-radius:7px 7px 0 0;transform-origin:bottom;transform:scaleY(0);
+    background:linear-gradient(180deg,#2da44e 0%,#1a7f37 100%)}
+  .chart-x{display:flex;justify-content:center;gap:96px;padding-top:12px}
+  .chart-x span{width:126px;text-align:center;font-size:15px;color:var(--mute)}
+  @keyframes barUp{0%{transform:scaleY(0)}100%{transform:scaleY(1)}}
+  .dslide.play .bar{animation:barUp .85s cubic-bezier(.22,.9,.32,1) .5s both}
+  .dslide.play .bar-val{animation:tsUp .5s ease 1.15s both}
+  .dslide .d-top,.dslide .d-kicker,.dslide .d-title,.dslide .stat,
+  .dslide .growth-left,.dslide .chart,.dslide .d-foot{opacity:0}
+  .dslide.play .d-top{animation:tsUp .5s cubic-bezier(.22,.9,.32,1) .04s both}
+  .dslide.play .d-kicker{animation:tsUp .5s cubic-bezier(.22,.9,.32,1) .12s both}
+  .dslide.play .d-title{animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .2s both}
+  .dslide.play .growth-left{animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .34s both}
+  .dslide.play .chart{animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .44s both}
+  .dslide.play .stat:nth-of-type(1){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .34s both}
+  .dslide.play .stat:nth-of-type(2){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .46s both}
+  .dslide.play .d-foot{animation:tsUp .5s cubic-bezier(.22,.9,.32,1) .6s both}
 
   /* agentic surfaces slide */
   .surfaces{display:flex;flex-direction:column}
@@ -136,16 +205,21 @@
 <div class="wrap">
   <div class="stage" id="stage">
     <section class="slide title-slide">
+      <div class="ts-band"><div class="ts-grid"><i style="background:#ebedf0;animation-delay:0.30s"></i><i style="background:#ebedf0;animation-delay:0.31s"></i><i style="background:#ebedf0;animation-delay:0.32s"></i><i style="background:#aceebb;animation-delay:0.34s"></i><i style="background:#ebedf0;animation-delay:0.35s"></i><i style="background:#aceebb;animation-delay:0.33s"></i><i style="background:#aceebb;animation-delay:0.34s"></i><i style="background:#aceebb;animation-delay:0.35s"></i><i style="background:#ebedf0;animation-delay:0.36s"></i><i style="background:#ebedf0;animation-delay:0.37s"></i><i style="background:#aceebb;animation-delay:0.35s"></i><i style="background:#ebedf0;animation-delay:0.36s"></i><i style="background:#ebedf0;animation-delay:0.38s"></i><i style="background:#ebedf0;animation-delay:0.39s"></i><i style="background:#ebedf0;animation-delay:0.40s"></i><i style="background:#ebedf0;animation-delay:0.38s"></i><i style="background:#4ac26b;animation-delay:0.39s"></i><i style="background:#ebedf0;animation-delay:0.40s"></i><i style="background:#aceebb;animation-delay:0.41s"></i><i style="background:#ebedf0;animation-delay:0.43s"></i><i style="background:#ebedf0;animation-delay:0.40s"></i><i style="background:#aceebb;animation-delay:0.42s"></i><i style="background:#ebedf0;animation-delay:0.43s"></i><i style="background:#ebedf0;animation-delay:0.44s"></i><i style="background:#ebedf0;animation-delay:0.45s"></i><i style="background:#aceebb;animation-delay:0.43s"></i><i style="background:#4ac26b;animation-delay:0.44s"></i><i style="background:#ebedf0;animation-delay:0.45s"></i><i style="background:#ebedf0;animation-delay:0.47s"></i><i style="background:#ebedf0;animation-delay:0.48s"></i><i style="background:#ebedf0;animation-delay:0.46s"></i><i style="background:#4ac26b;animation-delay:0.47s"></i><i style="background:#ebedf0;animation-delay:0.48s"></i><i style="background:#4ac26b;animation-delay:0.49s"></i><i style="background:#ebedf0;animation-delay:0.50s"></i><i style="background:#ebedf0;animation-delay:0.48s"></i><i style="background:#ebedf0;animation-delay:0.49s"></i><i style="background:#2da44e;animation-delay:0.51s"></i><i style="background:#aceebb;animation-delay:0.52s"></i><i style="background:#ebedf0;animation-delay:0.53s"></i><i style="background:#4ac26b;animation-delay:0.51s"></i><i style="background:#4ac26b;animation-delay:0.52s"></i><i style="background:#ebedf0;animation-delay:0.53s"></i><i style="background:#ebedf0;animation-delay:0.54s"></i><i style="background:#ebedf0;animation-delay:0.56s"></i><i style="background:#4ac26b;animation-delay:0.53s"></i><i style="background:#ebedf0;animation-delay:0.55s"></i><i style="background:#ebedf0;animation-delay:0.56s"></i><i style="background:#ebedf0;animation-delay:0.57s"></i><i style="background:#ebedf0;animation-delay:0.58s"></i><i style="background:#ebedf0;animation-delay:0.56s"></i><i style="background:#4ac26b;animation-delay:0.57s"></i><i style="background:#4ac26b;animation-delay:0.58s"></i><i style="background:#ebedf0;animation-delay:0.60s"></i><i style="background:#ebedf0;animation-delay:0.61s"></i><i style="background:#ebedf0;animation-delay:0.59s"></i><i style="background:#4ac26b;animation-delay:0.60s"></i><i style="background:#ebedf0;animation-delay:0.61s"></i><i style="background:#4ac26b;animation-delay:0.62s"></i><i style="background:#aceebb;animation-delay:0.63s"></i><i style="background:#2da44e;animation-delay:0.61s"></i><i style="background:#aceebb;animation-delay:0.62s"></i><i style="background:#2da44e;animation-delay:0.64s"></i><i style="background:#4ac26b;animation-delay:0.65s"></i><i style="background:#2da44e;animation-delay:0.66s"></i><i style="background:#ebedf0;animation-delay:0.64s"></i><i style="background:#ebedf0;animation-delay:0.65s"></i><i style="background:#4ac26b;animation-delay:0.66s"></i><i style="background:#2da44e;animation-delay:0.67s"></i><i style="background:#ebedf0;animation-delay:0.69s"></i><i style="background:#aceebb;animation-delay:0.66s"></i><i style="background:#aceebb;animation-delay:0.68s"></i><i style="background:#4ac26b;animation-delay:0.69s"></i><i style="background:#aceebb;animation-delay:0.70s"></i><i style="background:#4ac26b;animation-delay:0.71s"></i><i style="background:#116329;animation-delay:0.69s"></i><i style="background:#ebedf0;animation-delay:0.70s"></i><i style="background:#2da44e;animation-delay:0.71s"></i><i style="background:#ebedf0;animation-delay:0.73s"></i><i style="background:#2da44e;animation-delay:0.74s"></i><i style="background:#ebedf0;animation-delay:0.72s"></i><i style="background:#ebedf0;animation-delay:0.73s"></i><i style="background:#ebedf0;animation-delay:0.74s"></i><i style="background:#4ac26b;animation-delay:0.75s"></i><i style="background:#2da44e;animation-delay:0.76s"></i><i style="background:#aceebb;animation-delay:0.74s"></i><i style="background:#aceebb;animation-delay:0.75s"></i><i style="background:#aceebb;animation-delay:0.77s"></i><i style="background:#aceebb;animation-delay:0.78s"></i><i style="background:#4ac26b;animation-delay:0.79s"></i><i style="background:#116329;animation-delay:0.77s"></i><i style="background:#aceebb;animation-delay:0.78s"></i><i style="background:#4ac26b;animation-delay:0.79s"></i><i style="background:#aceebb;animation-delay:0.80s"></i><i style="background:#ebedf0;animation-delay:0.82s"></i><i style="background:#ebedf0;animation-delay:0.79s"></i><i style="background:#4ac26b;animation-delay:0.81s"></i><i style="background:#aceebb;animation-delay:0.82s"></i><i style="background:#4ac26b;animation-delay:0.83s"></i><i style="background:#ebedf0;animation-delay:0.84s"></i><i style="background:#aceebb;animation-delay:0.82s"></i><i style="background:#ebedf0;animation-delay:0.83s"></i><i style="background:#aceebb;animation-delay:0.84s"></i><i style="background:#aceebb;animation-delay:0.86s"></i><i style="background:#116329;animation-delay:0.87s"></i></div></div>
       <div class="ts-eyebrow">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-        <span>AGNTCon Europe 2026</span>
+        <span>AGNTCon Europe 2026 &middot; Amsterdam</span>
       </div>
       <h1 class="ts-title">A New Way To<br>Build Software</h1>
+      <div class="ts-rule"></div>
       <p class="ts-sub">How GitHub is evolving for a human, agent future</p>
       <div class="ts-foot">
         <div class="ts-me">
-          <p class="ts-name">Marlene Mhangami</p>
-          <p class="ts-role">I work at GitHub</p>
+          <img class="ts-avatar" src="assets/marlene.png" alt="Marlene Mhangami">
+          <div>
+            <p class="ts-name">Marlene Mhangami</p>
+            <p class="ts-role">DevEx at GitHub</p>
+          </div>
         </div>
         <div class="ts-handles">
           <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><b>marlenezw</b></span>
@@ -153,8 +227,49 @@
         </div>
       </div>
     </section>
+    <section class="slide dslide">
+      <div class="d-top"><span>platform / the volume of code</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
+      <p class="d-kicker">GitHub Octoverse 2025</p>
+      <h2 class="d-title">More Code Is Being Created</h2>
+      <div class="d-body">
+        <div class="stat">
+          <p class="stat-label">Pull requests merged / month</p>
+          <p class="stat-num">43.2M</p>
+          <span class="chip"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.8 10.8 9.4H1.2z" fill="currentColor"/></svg>23% YoY</span>
+          <p class="stat-desc">Pull requests merged each month in 2025.</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">Commits pushed in 2025</p>
+          <p class="stat-num">~1B</p>
+          <span class="chip"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.8 10.8 9.4H1.2z" fill="currentColor"/></svg>25% YoY</span>
+          <p class="stat-desc">GitHub&rsquo;s most active year ever.</p>
+        </div>
+      </div>
+      <p class="d-foot">Source: GitHub Octoverse 2025.</p>
+    </section>
     <section class="slide"><img src="slides_png/slide-03-commits.png" alt="Commits line chart"></section>
-    <section class="slide"><img src="slides_png/slide-04-agent-growth.png" alt="Agent Driven Growth"></section>
+    <section class="slide dslide">
+      <div class="d-top"><span>platform / agent-driven growth</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
+      <p class="d-kicker">2026 growth rates</p>
+      <h2 class="d-title">Agent Driven Growth</h2>
+      <div class="d-body">
+        <div class="growth-left">
+          <p class="stat-label">Agent-created pull requests</p>
+          <p class="stat-num">1.8M</p>
+          <span class="chip"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.8 10.8 9.4H1.2z" fill="currentColor"/></svg>4x in 6 months</span>
+          <p class="stat-desc">Created by agents in March 2026 alone.</p>
+        </div>
+        <div class="chart">
+          <p class="chart-cap">Agent-created pull requests per month</p>
+          <div class="chart-plot">
+            <div class="bar-wrap"><div class="bar" style="height:20.5%"></div></div>
+            <div class="bar-wrap"><span class="bar-val">1.8M</span><div class="bar" style="height:82%"></div></div>
+          </div>
+          <div class="chart-x"><span>Sep 2025</span><span>Mar 2026</span></div>
+        </div>
+      </div>
+      <p class="d-foot">Sources: GitHub Corp Comms external reference tracker and GitHub Blog, 2026. Chart is illustrative.</p>
+    </section>
     <section class="slide"><img src="slides_png/slide-05-transition.png" alt="Transition statement"></section>
     <section class="slide" id="issues">
       <div class="heads">
@@ -265,6 +380,7 @@
     if(slides[i].id==='issues') playIssues();
     if(slides[i].classList.contains('surfaces')) playSurfaces();
     if(slides[i].classList.contains('title-slide')) replay(slides[i]);
+    if(slides[i].classList.contains('dslide')) replay(slides[i]);
   }
   function replay(sec){sec.classList.remove('play');void sec.offsetWidth;sec.classList.add('play');}
   function go(d){show(i+d);}
