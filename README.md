@@ -13,6 +13,7 @@ Agents now write more code, faster — moving the bottleneck from *writing* to *
 
 - **[▶ Click-through deck](https://marlenezw.github.io/agntcon-mcpcon-europe-2026/)**
 - [PDF](./AGNTCon-Europe-2026-Keynote.pdf) · [PowerPoint](./AGNTCon-Europe-2026-Keynote.pptx) (speaker notes included)
+- In the PowerPoint the four demo slides are animated GIFs, so they play on any machine with no codec or linked file issues. The PDF uses still frames.
 - Static exports: [`slides_png/`](./slides_png)
 
 ## Running order
@@ -35,7 +36,7 @@ Agents now write more code, faster — moving the bottleneck from *writing* to *
 | 14 | GitHub across multiple agentic surfaces |
 | 15 | Thank you |
 
-Slides 9 to 12 are recorded walkthroughs of real GitHub UI, embedded as video in the click-through deck and captured as stills in the PDF and PowerPoint.
+Slides 9 to 12 are recorded walkthroughs of real GitHub UI. They play as MP4 in the click-through deck, as looping GIFs in the PowerPoint, and appear as stills in the PDF.
 
 ## Repo layout
 
