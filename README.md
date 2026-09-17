@@ -13,7 +13,7 @@ Agents now write more code, faster — moving the bottleneck from *writing* to *
 
 - **[▶ Click-through deck](https://marlenezw.github.io/agntcon-mcpcon-europe-2026/)**
 - [PDF](./AGNTCon-Europe-2026-Keynote.pdf) · [PowerPoint](./AGNTCon-Europe-2026-Keynote.pptx) (speaker notes included)
-- In the PowerPoint the four demo slides are animated GIFs, so they play on any machine with no codec or linked file issues. The PDF uses still frames.
+- In the PowerPoint the three demo slides are animated GIFs, so they play on any machine with no codec or linked file issues. The PDF uses still frames.
 - Static exports: [`slides_png/`](./slides_png)
 
 ## Running order
@@ -30,13 +30,12 @@ Agents now write more code, faster — moving the bottleneck from *writing* to *
 | 8 | The Modern GitHub Experience |
 | 9 | Demo · attach files from the CLI |
 | 10 | Demo · an agent automation files an issue with evidence |
-| 11 | Demo · stacked pull requests |
-| 12 | Demo · the modern pull request experience |
-| 13 | Maintainer Controls |
-| 14 | GitHub across multiple agentic surfaces |
-| 15 | Thank you |
+| 11 | Demo · stacked pull requests end to end |
+| 12 | Maintainer Controls |
+| 13 | GitHub across multiple agentic surfaces |
+| 14 | Thank you |
 
-Slides 9 to 12 are recorded walkthroughs of real GitHub UI. They play as MP4 in the click-through deck, as looping GIFs in the PowerPoint, and appear as stills in the PDF.
+Slides 9 to 11 are recorded walkthroughs of real GitHub UI. They play as MP4 in the click-through deck, as looping GIFs in the PowerPoint, and appear as stills in the PDF.
 
 ## Repo layout
 
@@ -44,6 +43,6 @@ Slides 9 to 12 are recorded walkthroughs of real GitHub UI. They play as MP4 in 
 index.html                       the deck (single file, no build step)
 assets/                          demo videos and images
 slides_png/                      one PNG per slide, 2560x1440
-AGNTCon-Europe-2026-Keynote.pdf  15 page export
-AGNTCon-Europe-2026-Keynote.pptx 15 slides, full bleed, with speaker notes
+AGNTCon-Europe-2026-Keynote.pdf  14 page export
+AGNTCon-Europe-2026-Keynote.pptx 14 slides, full bleed, with speaker notes
 ```
