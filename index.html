@@ -283,6 +283,29 @@
   .mg-slide.play .mg-card:nth-child(2){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .42s both}
   .mg-slide.play .mg-card:nth-child(3){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .54s both}
 
+  /* maintainer controls slide */
+  .d-body.mc-body{align-items:stretch;gap:24px;padding:16px 0 6px}
+  .mc-card{flex:1;position:relative;display:flex;flex-direction:column;overflow:hidden;
+    background:#f6faf7;border:1px solid #d7e6dc;border-radius:16px;padding:30px 28px;
+    align-self:center;height:322px;box-shadow:0 1px 2px rgba(31,35,40,.05);opacity:0}
+  .mc-num{position:absolute;top:14px;right:20px;font-size:58px;line-height:1;
+    font-weight:800;letter-spacing:-3px;color:#116329;opacity:.12;
+    font-variant-numeric:tabular-nums}
+  .mc-ico{flex:none;width:44px;height:44px;border-radius:12px;display:flex;
+    align-items:center;justify-content:center;background:#dafbe1;color:#116329;
+    border:1px solid #aceebb}
+  .mc-ico svg{width:21px;height:21px;display:block}
+  .mc-h{margin:18px 0 0;font-size:25px;line-height:1.14;letter-spacing:-.7px;
+    font-weight:800;color:var(--ink)}
+  .mc-chip{display:inline-block;margin:11px 0 0;align-self:flex-start;
+    padding:4px 10px;border-radius:999px;background:#ffffff;border:1px solid #d7e6dc;
+    font-size:11px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:#1a7f37}
+  .mc-p{margin:14px 0 0;font-size:15px;line-height:1.55;color:var(--mute)}
+  .mc-slide .d-foot b{color:var(--ink);font-weight:700}
+  .mc-slide.play .mc-card:nth-child(1){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .3s both}
+  .mc-slide.play .mc-card:nth-child(2){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .42s both}
+  .mc-slide.play .mc-card:nth-child(3){animation:tsUp .6s cubic-bezier(.22,.9,.32,1) .54s both}
+
   /* agentic surfaces slide */
   .surfaces{display:flex;flex-direction:column}
   .s-head{padding:64px 70px 0;text-align:center;opacity:0;flex:none}
@@ -545,6 +568,26 @@
     <section class="slide slide-video light"><video src="assets/gh-artifacts-demo-v2.mp4" muted playsinline preload="auto"></video></section>
     <section class="slide slide-video"><video src="assets/gh-stack-demo.mp4" muted playsinline preload="auto"></video></section>
     <section class="slide slide-video light"><video src="assets/gh-pr-overview-demo.mp4" muted playsinline preload="auto"></video></section>
+    <section class="slide dslide mc-slide">
+      <div class="d-top"><span>product / maintainer controls</span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></div>
+      <p class="d-kicker">keeping humans in control</p>
+      <h2 class="d-title">Maintainer Controls</h2>
+      <div class="d-body mc-body">
+        <div class="mc-card"><span class="mc-num">01</span><span class="mc-ico"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 4a4 4 0 0 1 8 0v2h.25c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-5.5C2 6.784 2.784 6 3.75 6H4Zm8.25 3.5h-8.5a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25ZM10.5 6V4a2.5 2.5 0 1 0-5 0v2Z"/></svg></span>
+          <h3 class="mc-h">Collaborators only</h3>
+          <span class="mc-chip">Shipped, June 2026</span>
+          <p class="mc-p">Restrict who can open issues to people with write access. Every public entry point closes with it: issues, comments, Discussions, Projects and Copilot.</p></div>
+        <div class="mc-card"><span class="mc-num">02</span><span class="mc-ico"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13.28 9.03-5.25 5.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042ZM4.5 4.75A.75.75 0 0 1 5.25 4h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75ZM5.25 7h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1 0-1.5Z"/></svg></span>
+          <h3 class="mc-h">Agent automation controls</h3>
+          <span class="mc-chip">Public preview, July 2026</span>
+          <p class="mc-p">Agents suggest instead of apply. Labels, types, assignments and closures wait for approval, auto-apply above a confidence threshold you set, and record a rationale for every action.</p></div>
+        <div class="mc-card"><span class="mc-num">03</span><span class="mc-ico"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0-.001 3.999A2 2 0 0 0 5.5 3.5Z"/></svg></span>
+          <h3 class="mc-h">Triage role exceptions</h3>
+          <span class="mc-chip">Shipped, August 2026</span>
+          <p class="mc-p">Delegate without reopening the door. Trusted triagers keep filing and sorting issues while the restriction stays on for everyone else.</p></div>
+      </div>
+      <p class="d-foot"><b>Gate the front door. Delegate safely. Keep agents on a leash inside the issue.</b><br><span class="d-src">Source: GitHub Changelog, June to August 2026.</span></p>
+    </section>
     <section class="slide surfaces">
       <div class="s-head">
         <h2>GitHub across multiple agentic surfaces</h2>
