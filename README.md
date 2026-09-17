@@ -29,7 +29,7 @@ Agents now write more code, faster — moving the bottleneck from *writing* to *
 | 7 | Developers and AI |
 | 8 | The Modern GitHub Experience |
 | 9 | Demo · attach files from the CLI |
-| 10 | Demo · issue artifacts and granular labels |
+| 10 | Demo · an agent automation files an issue with evidence |
 | 11 | Demo · stacked pull requests |
 | 12 | Demo · the modern pull request experience |
 | 13 | Maintainer Controls |
